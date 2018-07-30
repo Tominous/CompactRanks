@@ -1,5 +1,5 @@
 # ShorterRanks
-Makes every Hypixel rank shorter. (Currently works only in chat)                                               
+A ChatTriggers module that makes every Hypixel rank shorter. (Currently works only in chat)                                               
 https://chattriggers.com/modules/ShorterRanks
 
 # How to install
