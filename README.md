@@ -1,5 +1,5 @@
-# ShorterRanks
-A ChatTriggers module that makes every Hypixel rank shorter. (Currently works only in chat)                                               
+# CompactRanks
+A ChatTriggers module that displays every Hypixel rank in a more compact way.                                          
 https://chattriggers.com/modules/ShorterRanks
 
 # How to install
