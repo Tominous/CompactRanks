@@ -1,7 +1,7 @@
 {
   "name":"&9CompactRanks",
   "description":"Compacts every Hypixel's rank design.",
-  "version":"2.0.0",
+  "version":"1.10.2",
   "author":"IconPippi",
   "requires":["SettingsManager"]
 }
