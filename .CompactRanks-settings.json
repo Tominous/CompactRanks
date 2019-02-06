@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Settings",
+    "settings": [
+      {
+        "type": "toggle",
+        "name": "Toggle",
+        "value": true,
+        "hidden": false
+      },
+      {
+        "type": "toggle",
+        "name": "Tablist Editing",
+        "value": true,
+        "hidden": false
+      },
+      {
+        "type": "string_selector",
+        "name": "Mode",
+        "value": 1,
+        "options": [
+          "Compact",
+          "Super Compact",
+          "Extra Compact"
+        ],
+        "hidden": false
+      }
+    ]
+  }
+]

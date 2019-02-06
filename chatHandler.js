@@ -99,15 +99,27 @@ register("chat", function(color, event) { //TODO: Fix MVP++ with &b
 //MVP+
 register("chat", function(color, event) {
     if (!toggle.value) return;
-    var MVPPLUSmessage = ChatLib.getChatMessage(event, true);
-    if (mode.value == 0) {
-        ChatLib.chat(MVPPLUSmessage.replace("&b[MVP" + color + "+&b]", "&r&b[M" + color + "+&b]"));
-    } else if (mode.value == 1) {
-        ChatLib.chat(MVPPLUSmessage.replace("&b[MVP" + color + "+&b]", "&r"+color+"M&b"));
+    if (color.contains("+")) { //This means its a MVP++ with the blue design
+        var chatMessage = ChatLib.getChatMessage(event, true);
+        if (mode.value == 0) {
+            ChatLib.chat(chatMessage.replace("&b[MVP" + color + "+&b]", "&r&b[M" + color + "+&b]"));
+        } else if (mode.value == 1) {
+            ChatLib.chat(chatMessage.replace("&b[MVP" + color + "+&b]", "&r"+color.split("+")[0]+"M&b"));
+        } else {
+            ChatLib.chat(chatMessage.replace("&b[MVP" + color + "+&b]", "&r&b"));
+        }
+        cancel(event);
     } else {
-        ChatLib.chat(MVPPLUSmessage.replace("&b[MVP" + color + "+&b]", "&r&b"));
+        var MVPPLUSmessage = ChatLib.getChatMessage(event, true);
+        if (mode.value == 0) {
+            ChatLib.chat(MVPPLUSmessage.replace("&b[MVP" + color + "+&b]", "&r&b[M" + color + "+&b]"));
+        } else if (mode.value == 1) {
+            ChatLib.chat(MVPPLUSmessage.replace("&b[MVP" + color + "+&b]", "&r"+color+"M&b"));
+        } else {
+            ChatLib.chat(MVPPLUSmessage.replace("&b[MVP" + color + "+&b]", "&r&b"));
+        }
+        cancel(event);
     }
-    cancel(event);
 }).setParameter("contains").setChatCriteria("&b[MVP${color}+&b]").setPriority(Priority.LOWEST);
 
 //MVP
@@ -144,7 +156,7 @@ register("chat", function(event) {
     var VIPmessage = ChatLib.getChatMessage(event, true);
     if (mode.value == 0) {
         ChatLib.chat(VIPmessage.replace("&a[VIP]", "&r&a[V]"));
-    } else if (mode.vlaue == 1) {
+    } else if (mode.value == 1) {
         ChatLib.chat(VIPmessage.replace("&a[VIP]", "&r&aV"));
     } else {
         ChatLib.chat(VIPmessage.replace("&a[VIP]", "&r&a"));
